@@ -15,6 +15,16 @@ pipeline {
             }
         }
 
+        stage('Environment Check') {
+            steps {
+                sh 'whoami'
+                sh 'pwd'
+                sh 'uname -a'
+                sh 'python3 --version'
+                sh 'pip3 --version'
+            }
+        }
+        
         stage('Install Dependencies') {
             steps {
                 sh 'pip install -r requirements.txt'
