@@ -36,6 +36,7 @@ pipeline {
 
         stage('Test') {
     steps {
+        sh 'find . -maxdepth 3 -type f'
         sh 'venv/bin/pytest'
     }
 }
