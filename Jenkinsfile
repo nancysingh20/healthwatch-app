@@ -5,6 +5,7 @@ pipeline {
     environment {
         // Environment variables will go here later
       GIT_BRANCH = "Develop"
+        
     }
 
     stages {
@@ -41,7 +42,7 @@ pipeline {
 }
         stage('Package') {
     steps {
-        sh 'tar -czvf healthwatch.tar.gz app.py requirements.txt Dockerfile config/'
+        sh 'tar -czvf $BUILD_NUMBER.tar.gz app.py requirements.txt Dockerfile config/'
     }
 }
         stage('Archive Artifact') {
