@@ -36,12 +36,7 @@ pipeline {
 
         stage('Test') {
     steps {
-        sh 'pwd'
-        sh 'find . -maxdepth 3 -type f'
-        sh 'venv/bin/python --version'
-        sh 'venv/bin/python -c "import sys; print(sys.path)"'
-        sh 'venv/bin/python -c "import app; print(app.__file__)"'
-        sh 'venv/bin/pytest'
+        sh 'venv/bin/python -m pytest'
     }
 }
 
