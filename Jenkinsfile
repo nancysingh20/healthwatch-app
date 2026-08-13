@@ -41,10 +41,9 @@ pipeline {
 }
 
         stage('Build') {
-    steps {
-        sh 'venv/bin/python -m py_compile app.py'
-    }
-}
+            steps {
+                sh 'venv/bin/python -m py_compile app.py'
+            }
         }
     }
 
