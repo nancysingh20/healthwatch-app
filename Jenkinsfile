@@ -17,19 +17,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                // Install application dependencies
+                sh 'pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                // Run application tests
+                sh 'pytest'
             }
         }
 
         stage('Build') {
             steps {
-                // Build/validate the application
+                 sh 'python -m py_compile app.py'
             }
         }
     }
