@@ -42,12 +42,12 @@ pipeline {
 }
         stage('Package') {
     steps {
-        sh 'tar -czvf $BUILD_NUMBER.tar.gz app.py requirements.txt Dockerfile config/'
+        sh 'tar -czvf healthwatch-$BUILD_NUMBER.tar.gz app.py requirements.txt Dockerfile config/'
     }
 }
         stage('Archive Artifact') {
     steps {
-        archiveArtifacts artifacts: 'healthwatch.tar.gz'
+        archiveArtifacts artifacts: 'healthwatch-*.tar.gz'
     }
 }
 
