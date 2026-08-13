@@ -39,6 +39,11 @@ pipeline {
         sh 'venv/bin/python -m pytest'
     }
 }
+        stage('Package') {
+    steps {
+        sh 'tar -czvf healthwatch.tar.gz app.py requirements.txt Dockerfile config/'
+    }
+}
 
         stage('Build') {
             steps {
