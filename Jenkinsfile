@@ -38,14 +38,17 @@ pipeline {
 
         success {
             // What should happen after successful pipeline
+            echo "Successfull"
         }
 
         failure {
             // What should happen after failed pipeline
+            echo "Failed"
         }
 
         always {
             // Actions that should always execute
+           echo "Completed"
         }
     }
 }
