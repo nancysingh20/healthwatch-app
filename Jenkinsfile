@@ -44,6 +44,11 @@ pipeline {
         sh 'tar -czvf healthwatch.tar.gz app.py requirements.txt Dockerfile config/'
     }
 }
+        stage('Archive Artifact') {
+    steps {
+        archiveArtifacts artifacts: 'healthwatch.tar.gz'
+    }
+}
 
         stage('Build') {
             steps {
